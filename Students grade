@@ -1,0 +1,47 @@
+public class Student {
+    private int id;
+    private String name;
+    private int marks;
+    
+public Student(int id, String name, int marks) {
+        this.id = id;
+        this.name = name;
+        this.marks = marks;
+    }
+     public Student(int id, String name) {
+        this(id, name, 0);
+    }
+    
+    // Method to calculate grade based on marks
+    public String calculateGrade() {
+        if (marks < 35) {
+            return "FAIL";
+        } else if (marks < 50) {
+            return "PASS";
+        } else if (marks < 60) {
+            return "SECOND CLASS";
+        } else if (marks < 75) {
+            return "FIRST CLASS";
+        } else {
+            return "FIRST CLASS WITH DISTINCTION";
+        }
+    }
+    
+    // Main method for demonstration
+    public static void main(String[] args) {
+        // Instantiate 5 student objects using various constructors
+        Student student1 = new Student(101, "Alice", 80);
+        Student student2 = new Student(102, "Bob", 45);
+        Student student3 = new Student(103, "Charlie");
+        Student student4 = new Student(104, "David", 30);
+        Student student5 = new Student(105, "Eve", 90);
+        
+        // Display grades of each student
+        System.out.println("Student Grades:");
+        System.out.println("Student 1: " + student1.calculateGrade());
+        System.out.println("Student 2: " + student2.calculateGrade());
+        System.out.println("Student 3: " + student3.calculateGrade());
+        System.out.println("Student 4: " + student4.calculateGrade());
+        System.out.println("Student 5: " + student5.calculateGrade());
+    }
+}
