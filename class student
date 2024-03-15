@@ -1,0 +1,38 @@
+public class Student 
+{
+    private String name;
+    private int age;
+    private String grade;
+    
+    public Student(String name, int age)
+{
+        this.name = name;
+        this.age = age;
+        this.grade = "Unknown"; // Default grade
+}
+  
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+    
+    // Method to display student details
+    public void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Grade: " + grade);
+    }
+    
+    public static void main(String[] args) {
+        // Creating a Student object
+        Student student1 = new Student("Alice", 20);
+        
+        // Displaying initial details
+        System.out.println("Initial Student Details:");
+        student1.displayDetails();
+        student1.setGrade("A");
+        
+        // Displaying updated details
+        System.out.println("\nUpdated Student Details:");
+        student1.displayDetails();
+    }
+}
